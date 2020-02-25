@@ -1,31 +1,33 @@
 <style>
-    table td th{
-      border: 3px solid black;
-    }
+  table td th{
+    border: 3px solid black;
+  }
+
+  table{
+    border-collapse: collapse;
+    width: 90%;
+  }
+
+  th{
+    height: 100px;
+  }
+</style>
+
+
+<h2>Get All Customer</h2>
+
+<table>
+  <tr>
+    <th>Customer Id</th>
+    <th>Customer Name</th>
+    <th>Gender</th>
+    <th>Address</th>
+  </tr>
+  <tr *ngFor="let cust of listOfCustomer">
+    <td>{{cust.customerId}}</td>
+    <td>{{cust.customerName}}</td>
+    <td>{{cust.customerSex}}</td>
+    <td>{{cust.customerAdd1}} {{cust.customerAdd2}}</td>
+  </tr>
   
-    table{
-      border-collapse: collapse;
-      width: 90%;
-    }
-  
-    th{
-      height: 100px;
-    }
-  </style>
-  
-  
-  <h2>Get All Articles</h2>
-  
-  <table>
-    <tr>
-      <th>Article Id</th>
-      <th>Title</th>
-      <th>Category</th>
-    </tr>
-    <tr *ngFor="let article of listOfArticles">
-      <td>{{article.articleId}}</td>
-      <td>{{article.title}}</td>
-      <td>{{article.category}}</td>
-    </tr>
-    
-  </table>
+</table>

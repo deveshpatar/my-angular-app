@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from "./article-api/article.service";
-import { Article } from "./article-api/article";
- 
+import { CustomerService } from './customer-api/customer.service';
+import { Customer } from './customer-api/customer';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,19 +10,19 @@ import { Article } from "./article-api/article";
 export class AppComponent implements OnInit{
   title = 'my-angular-app';
 
-  constructor(private articleService: ArticleService){
+ 
+  constructor(private customerService: CustomerService){
+    
   }
 
-  listOfArticles: Article[];
+  listOfCustomer: Customer[];
 
   ngOnInit(){
-    this.articleService.getAllArticles().subscribe(
+    this.customerService.getCustomer().subscribe(
       data => 
       {
-          this.listOfArticles = data;
+          this.listOfCustomer = data;
     });
   }
 
 }
-
-
